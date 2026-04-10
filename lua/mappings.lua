@@ -17,5 +17,11 @@ map("n", "<A-j>", ":m .+1<CR>==", { desc = "move line down" })
 map("n", "<A-k>", ":m .-2<CR>==", { desc = "move line up" })
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "move line down" })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "move line up" })
-
+-- replace selected
+map(
+    "n",
+    "<leader>rc",
+    ":%s/\\<<C-r><C-w>\\>/new/gc<Left><Left><Left>",
+    { desc = "replace exact with control" }
+)
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
