@@ -9,9 +9,12 @@ map("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 -- black hole registers
 map({ "n", "v" }, "d", '"_d', { noremap = true, silent = true })
 map({ "n", "v" }, "c", '"_c', { noremap = true, silent = true })
+map({ "n", "v" }, "s", '"_s', { noremap = true, silent = true })
 -- cut
 map({ "n", "v" }, "x", "d", { noremap = true })
 map({ "n", "v" }, "xx", "dd", { noremap = true })
+-- visual line
+map({ "n", "v" }, "vv", "V", { noremap = true })
 -- move lines
 map("n", "<A-j>", ":m .+1<CR>==", { desc = "move line down" })
 map("n", "<A-k>", ":m .-2<CR>==", { desc = "move line up" })
