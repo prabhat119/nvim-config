@@ -44,3 +44,5 @@ remap("n", "<leader>k", "<cmd>lprev<CR>zz", { desc = "scroll up searched term, c
 remap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>", { desc = "replace with choice" })
 
 remap("n", "<leader>x", "<cmd>chmod +x %<CR>", { desc = "make executable" })
+
+remap("n", "<Tab>", "<C-w>", { desc = "changing window in buffer" })

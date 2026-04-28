@@ -37,3 +37,47 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufReadPre" }, {
 		lint.try_lint()
 	end,
 })
+
+-- autogroup : command on file type
+local cmdGroup = vim.api.nvim_create_augroup("RunCmdOnFileType", { clear = true })
+
+-- function : to map file type
+local function setRunCommand(buf)
+	local ft = vim.bo[buf].filetype
+
+	local commandMap = {
+		-- python = "python3 %",
+		-- javascript = "node %",
+		-- typescript = "ts-node %",
+		lua = "lua %",
+		c = "gcc % -o %< && ./%<",
+		cpp = "g++ % -o %< && ./%<",
+		sh = "bash %",
+		go = "go run %",
+		rust = "cargo run",
+	}
+
+	local runCommand = commandMap[ft]
+	if not runCommand then
+		return
+	end
+
+	vim.keymap.set("n", "<leader>r", function()
+		vim.cmd("w")
+		vim.cmd("vsplit")
+		vim.cmd("terminal " .. runCommand)
+	end, { buffer = buf })
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+	group = cmdGroup,
+	callback = function(args)
+		setRunCommand(args.buf)
+	end,
+})
+
+-- for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+-- 	if vim.api.nvim_buf_is_loaded(buf) then
+-- 		setRunCommand(buf)
+-- 	end
+-- end
