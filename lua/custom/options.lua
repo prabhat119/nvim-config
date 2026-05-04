@@ -7,6 +7,7 @@ opt.guicursor = ""
 opt.autoread = true
 
 opt.splitright = true
+opt.splitbelow = true
 
 opt.number = true
 opt.relativenumber = true
