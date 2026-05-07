@@ -9,6 +9,7 @@ remap("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "o
 
 remap("i", "jl", "<ESC>la", { desc = "go to left during insert mode" })
 remap("i", "jf", "<BS>", { desc = "backspace during insert mode" })
+remap("i", "fj", "<BS>", { desc = "backspace during insert mode" })
 
 remap({ "n", "v" }, "d", '"_d', { desc = "delete without yank" })
 remap({ "n", "v" }, "<leader>d", "d", { desc = "delete with yank" })
