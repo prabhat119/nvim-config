@@ -45,3 +45,5 @@ remap("x", "p", '"_dp', { desc = "hightlight paste" })
 remap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>", { desc = "replace with choice" })
 
 remap("n", "<leader>x", "<cmd>chmod +x %<CR>", { desc = "make executable" })
+
+remap("n", "<C-\\>", "<cmd>vs<CR>", { desc = "vertical split" })
