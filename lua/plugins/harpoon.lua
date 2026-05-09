@@ -19,28 +19,28 @@ return {
 			desc = "toggle quick menu",
 		},
 		{
-			"<C-h>",
+			"<leader>h",
 			function()
 				require("harpoon.ui").nav_file(1)
 			end,
 			desc = "navigate to file index 1",
 		},
 		{
-			"<C-j>",
+			"<leader>j",
 			function()
 				require("harpoon.ui").nav_file(2)
 			end,
 			desc = "navigate to file index 2",
 		},
 		{
-			"<C-k>",
+			"<leader>k",
 			function()
 				require("harpoon.ui").nav_file(3)
 			end,
 			desc = "navigate to file index 3",
 		},
 		{
-			"<C-l>",
+			"<leader>l",
 			function()
 				require("harpoon.ui").nav_file(4)
 			end,
