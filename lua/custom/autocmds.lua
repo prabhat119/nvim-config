@@ -2,7 +2,7 @@
 vim.api.nvim_create_augroup("AutoRefresh", { clear = true })
 
 -- autocmd : file changes when neovim gains focus
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
 	group = "AutoRefresh",
 	command = "if mode() != 'c' | checktime | endif",
 	pattern = "*",
