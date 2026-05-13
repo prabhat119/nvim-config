@@ -19,6 +19,7 @@ return {
 			rust = { "rustfmt" },
 			postgresql = { "pg_format" },
 			bash = { "shmft" },
+			html = { "prettierd", "prettier", stop_after_first = true },
 			json = { "prettierd", "prettier", stop_after_first = true },
 			-- toml = { "taplo" },
 			yaml = { "prettierd", "prettier", stop_after_first = true },

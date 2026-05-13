@@ -13,6 +13,7 @@ return {
 			"rust_analyzer",
 			"postgres_lsp",
 			"bashls",
+			"html",
 			"jsonls",
 			"taplo",
 			"yamlls",
