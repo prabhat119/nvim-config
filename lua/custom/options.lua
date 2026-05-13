@@ -6,6 +6,8 @@ opt.guicursor = ""
 
 opt.autoread = true
 
+opt.updatetime = 300
+
 opt.splitright = true
 opt.splitbelow = true
 

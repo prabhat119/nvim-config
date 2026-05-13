@@ -16,7 +16,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	group = lsp_group,
 	callback = function(ev)
 		local map = vim.keymap.set
-		-- local opts = { buffer = bufnr, remap = false }
 
 		map("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "go to definition" })
 		map("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "go to references" })
@@ -25,8 +24,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "gy", vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "go to type definition" })
 		map("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "hover docs" })
 		map("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "code actions" })
-		-- map("n", "[d", vim.diagnostic.goto_prev(), { buffer = ev.buf, desc = "code actions" })
-		-- map("n", "]d", vim.diagnostic.goto_next(), { buffer = ev.buf, desc = "code actions" })
 	end,
 })
 
@@ -75,9 +72,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		setRunCommand(args.buf)
 	end,
 })
-
--- for _, buf in ipairs(vim.api.nvim_list_bufs()) do
--- 	if vim.api.nvim_buf_is_loaded(buf) then
--- 		setRunCommand(buf)
--- 	end
--- end

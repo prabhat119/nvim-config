@@ -10,8 +10,9 @@ vim.diagnostic.config({
 		},
 	},
 	virtual_text = {
-		severity = vim.diagnostic.severity.ERROR,
+		severity = severity.ERROR,
 	},
 	underline = true,
 	severity_sort = true,
+	update_in_insert = false,
 })
