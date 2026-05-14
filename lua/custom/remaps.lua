@@ -3,7 +3,10 @@ local remap = vim.keymap.set
 remap("i", "jk", "<ESC>", { desc = "enter normal mode" })
 remap("v", "q", "<ESC>", { desc = "enter normal mode" })
 remap("n", ";", ":", { desc = "enter command mode" })
-remap("n", "<leader>dm", vim.cmd.Ex, { desc = "enter directory buffer mode" })
+
+remap("n", "<leader>ee", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
+remap("n", "<leader>ef", "<cmd>NvimTreeFindFile<cr>", { desc = "Find current file in explorer" })
+remap("n", "<leader>er", "<cmd>NvimTreeRefresh<cr>", { desc = "Refresh explorer" })
 
 remap("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "open diagnostic for error" })
 
