@@ -8,6 +8,16 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 	pattern = "*",
 })
 
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	callback = function()
+-- 		local lang = vim.bo.filetype
+-- 		local ok, _ = pcall(vim.treesitter.get_parser, 0, lang)
+-- 		if ok then
+-- 			vim.treesitter.start()
+-- 		end
+-- 	end,
+-- })
+
 -- autocmd group : lsp-config
 local lsp_group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true })
 

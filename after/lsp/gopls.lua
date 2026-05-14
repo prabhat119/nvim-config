@@ -1,10 +1,12 @@
 return {
-	filetypes = { "go", "gohtml", "gotmpl", "gohtmltmpl" },
+	filetypes = { "go", "gomod", "gowork", "gotmpl" },
 	settings = {
 		gopls = {
-			build = {
-				templateExtensions = { "gohtml", "gotmpl" },
-			},
+			completeUnimported = true,
+			usePlaceholders = true,
 		},
+	},
+	build = {
+		templateExtensions = { "gohtml", "html", "gotmpl", "tmpl" },
 	},
 }
