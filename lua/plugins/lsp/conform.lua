@@ -19,10 +19,12 @@ return {
 			rust = { "rustfmt" },
 			postgresql = { "pg_format" },
 			bash = { "shmft" },
-			html = { "prettierd", "prettier", stop_after_first = true },
 			gotmpl = { "goimports" },
+			html = { "prettierd", "prettier", stop_after_first = true },
+			javascript = { "prettierd", "prettier", stop_after_first = true },
 			json = { "prettierd", "prettier", stop_after_first = true },
 			-- toml = { "taplo" },
+			typescript = { "prettierd", "prettier", stop_after_first = true },
 			yaml = { "prettierd", "prettier", stop_after_first = true },
 		},
 
