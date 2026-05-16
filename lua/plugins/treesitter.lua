@@ -1,35 +1,48 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	branch = "master",
+	branch = "main",
 	lazy = false,
 	build = ":TSUpdate",
 	config = function()
-		local treesitter = require("nvim-treesitter.configs")
+		local treesitter = require("nvim-treesitter")
+		local languages = {
+			"bash",
+			"c",
+			"cpp",
+			"css",
+			"dockerfile",
+			"go",
+			"html",
+			"javascript",
+			"lua",
+			"luadoc",
+			"markdown",
+			"markdown_inline",
+			"rust",
+			"sql",
+			"toml",
+			"typescript",
+			"vim",
+			"vimdoc",
+			"yaml",
+			"zsh",
+		}
 
 		treesitter.setup({
-			ensure_installed = {
-				"c",
-				"cpp",
-				"bash",
-				"go",
-				"lua",
-				"luadoc",
-				"markdown",
-				"rust",
-				"toml",
-				"vim",
-				"vimdoc",
-				"yaml",
-			},
-			sync_install = false,
+			install_dir = vim.fn.stdpath("data") .. "/site",
 			auto_install = true,
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
-			indent = {
-				enable = true,
-			},
+		})
+
+		treesitter.install(languages)
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = languages,
+			callback = function()
+				local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
+				if lang then
+					vim.treesitter.start()
+				end
+			end,
 		})
 	end,
 }

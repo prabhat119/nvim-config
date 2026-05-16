@@ -8,16 +8,6 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 	pattern = "*",
 })
 
--- vim.api.nvim_create_autocmd("FileType", {
--- 	callback = function()
--- 		local lang = vim.bo.filetype
--- 		local ok, _ = pcall(vim.treesitter.get_parser, 0, lang)
--- 		if ok then
--- 			vim.treesitter.start()
--- 		end
--- 	end,
--- })
-
 -- autocmd group : lsp-config
 local lsp_group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true })
 
@@ -33,7 +23,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "gI", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "go to implementation" })
 		map("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "go to declaration" })
 		map("n", "gy", vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "go to type definition" })
-		map("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "hover docs" })
+		map("n", "K", function()
+			vim.lsp.buf.hover({
+				syntax = "markdown",
+				border = "rounded",
+			})
+		end, { buffer = ev.buf, desc = "hover docs" })
 		map("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "code actions" })
 	end,
 })
@@ -54,7 +49,7 @@ local function setRunCommand(buf)
 	local ft = vim.bo[buf].filetype
 
 	local commandMap = {
-		-- python = "python3 %",
+		python = "python3 %",
 		-- javascript = "node %",
 		-- typescript = "ts-node %",
 		lua = "lua %",

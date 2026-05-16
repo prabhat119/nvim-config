@@ -8,8 +8,18 @@ return {
 	config = function()
 		local masonConform = require("mason-conform")
 		masonConform.setup({
-			ensure_installed = {},
-			ignore_install = {},
+			ensure_installed = {
+				"beautysh",
+				"clang-format",
+				"goimports",
+				"prettierd",
+				"pgformatter",
+				"rustfmt",
+				"stylua",
+			},
+			ignore_install = {
+				"tombi",
+			},
 		})
 	end,
 }
