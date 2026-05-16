@@ -29,6 +29,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		map("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "go to definition" })
 		map("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "go to references" })
+		map("n", "gR", vim.lsp.buf.rename, { buffer = ev.buf, desc = "rename all references" })
 		map("n", "gI", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "go to implementation" })
 		map("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "go to declaration" })
 		map("n", "gy", vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "go to type definition" })
