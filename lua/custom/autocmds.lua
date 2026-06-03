@@ -56,7 +56,7 @@ local function setRunCommand(buf)
 		c = "gcc % -o %< && ./%<",
 		cpp = "g++ % -o %< && ./%<",
 		sh = "bash %",
-		go = "go run %",
+		go = "go run .",
 		rust = "cargo run",
 	}
 

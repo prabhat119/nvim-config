@@ -49,4 +49,4 @@ remap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>", 
 
 remap("n", "<leader>x", "<cmd>chmod +x %<CR>", { desc = "make executable" })
 
-remap("n", "<C-\\>", "<cmd>vs<CR>", { desc = "vertical split" })
+remap("n", "<C-]>", "<cmd>vs<CR>", { desc = "vertical split" })
