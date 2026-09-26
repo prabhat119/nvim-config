@@ -1,10 +1,10 @@
 local global = vim.g
 local opt = vim.opt
 
-global.live_server = {
-	port = 8080,
-	browser = true,
-}
+-- global.live_server = {
+-- 	port = 8080,
+-- 	browser = true,
+-- }
 
 opt.clipboard = "unnamedplus"
 

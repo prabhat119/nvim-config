@@ -1,4 +1,5 @@
-return {
-	"barrettruth/live-server.nvim",
-	event = "VeryLazy",
-}
+return {}
+-- return {
+-- 	"barrettruth/live-server.nvim",
+-- 	event = "VeryLazy",
+-- }

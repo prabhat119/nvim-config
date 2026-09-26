@@ -1,6 +1,7 @@
 local remap = vim.keymap.set
 
 remap("i", "jk", "<ESC>", { desc = "enter normal mode" })
+remap("i", "JK", "<ESC>", { desc = "enter normal mode" })
 remap("v", "q", "<ESC>", { desc = "enter normal mode" })
 remap("n", ";", ":", { desc = "enter command mode" })
 
@@ -13,6 +14,8 @@ remap("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "o
 remap("i", "jl", "<ESC>la", { desc = "go to left during insert mode" })
 remap("i", "jf", "<BS>", { desc = "backspace during insert mode" })
 remap("i", "fj", "<BS>", { desc = "backspace during insert mode" })
+remap("i", "JF", "<BS>", { desc = "backspace during insert mode" })
+remap("i", "FJ", "<BS>", { desc = "backspace during insert mode" })
 
 remap({ "n", "v" }, "d", '"_d', { desc = "delete without yank" })
 remap({ "n", "v" }, "<leader>d", "d", { desc = "delete with yank" })
@@ -31,6 +34,7 @@ remap("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selcted line down" })
 remap("v", "K", ":m '<-2<CR>gv=gv", { desc = "move selected line up" })
 
 remap("n", "<CR>", "mzo<Esc>", { desc = "create line below" })
+remap("n", "<leader><CR>", "mzO<Esc>", { desc = "create line above" })
 
 remap("n", "J", "mzJ`z", { desc = "move below line to current, cursor stays" })
 remap("n", "<C-d>", "<C-d>zz", { desc = "scroll down, cursor middle" })
