@@ -17,6 +17,7 @@ return {
 			"postgres_lsp",
 			"rust_analyzer",
 			"tombi",
+			"ts_ls",
 			"yamlls",
 		},
 	},

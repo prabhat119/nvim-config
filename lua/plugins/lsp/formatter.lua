@@ -21,18 +21,18 @@ return {
 				cpp = { "clang-format" },
 				go = { "goimports" },
 				gotmpl = { "goimports" },
-				html = { "prettierd", "prettier", stop_after_first = true },
-				javascript = { "prettierd", "prettier", stop_after_first = true },
-				javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-				json = { "prettierd", "prettier", stop_after_first = true },
+				html = { "oxfmt" },
+				javascript = { "oxfmt" },
+				javascriptreact = { "oxfmt" },
+				json = { "oxfmt" },
 				lua = { "stylua" },
 				postgresql = { "pg_format" },
 				rust = { "rustfmt" },
 				sql = { "pg_format" },
 				toml = { "tombi" },
-				typescript = { "prettierd", "prettier", stop_after_first = true },
-				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
-				yaml = { "prettierd", "prettier", stop_after_first = true },
+				typescript = { "oxfmt" },
+				typescriptreact = { "oxfmt" },
+				yaml = { "oxfmt" },
 				zsh = { "beautysh" },
 			},
 
@@ -40,15 +40,10 @@ return {
 				["clang-format"] = {
 					prepend_args = { "--style={IndentWidth: 4}" },
 				},
-				prettierd = {
+				oxfmt = {
 					env = {
-						PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/nvim/after/formatter/prettierrc.json"),
+						PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/nvim/after/formatter/oxftrc.json"),
 					},
-				},
-				prettier = {
-					prepend_args = function()
-						return { "--config", vim.fn.expand("~/.config/nvim/after/formatter/prettierrc.json") }
-					end,
 				},
 			},
 

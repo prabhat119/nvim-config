@@ -15,6 +15,7 @@ return {
 				"htmlhint",
 				"jsonlint",
 				"luacheck",
+				"oxlint",
 				"shellcheck",
 				"yamllint",
 			},

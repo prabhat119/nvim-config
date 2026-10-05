@@ -12,7 +12,7 @@ return {
 				"beautysh",
 				"clang-format",
 				"goimports",
-				"prettierd",
+				"oxfmt",
 				"pgformatter",
 				"rustfmt",
 				"stylua",
